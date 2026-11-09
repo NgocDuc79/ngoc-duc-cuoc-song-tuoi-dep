@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ngọc Đức Cuộc Sống Tươi Đẹp | Thân Khỏe • Tâm An • Trí Sáng</title>
+  <meta name="description" content="Không gian chia sẻ khoảnh khắc cuộc sống tươi đẹp, năng lượng tích cực, hành trình về nguồn và kết nối bằng hữu của Bùi Ngọc Đức." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- AMBIENT PARTICLES & GLOW ORBS -->
+  <canvas id="ambientCanvas"></canvas>
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#top" class="brand">
+        <img src="images/avatar.jpg" alt="Bùi Ngọc Đức" class="brand-avatar" />
+        <div class="brand-text">
+          <span class="brand-title">Ngọc Đức • Cuộc Sống Tươi Đẹp</span>
+          <span class="brand-sub">Thân Khỏe • Tâm An • Trí Sáng</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#top">Trang chủ</a>
+        <a href="#philosophy">Triết lý sống</a>
+        <a href="#gallery">Khoảnh khắc đẹp</a>
+        <a href="#connect">Kết nối & Liên hệ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn-icon" id="btnSlideshow" onclick="startSlideshow()" title="Trình chiếu ảnh tự động">
+          ▶️
+        </button>
+        <button class="btn-icon" id="btnThemeToggle" onclick="toggleTheme()" title="Đổi giao diện Sáng / Tối">
+          🌙
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="top" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- LEFT CONTENT -->
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span>✨ Chào mừng đến với không gian của Bùi Ngọc Đức</span>
+          </div>
+
+          <h1 class="hero-title">
+            Ngọc Đức<br />
+            <span class="gradient-name">Cuộc Sống Tươi Đẹp</span>
+          </h1>
+
+          <div class="hero-typing-wrap">
+            <span>🌟</span>
+            <span id="typingText">Thân Khỏe • Tâm An • Trí Sáng</span>
+          </div>
+
+          <p class="hero-description">
+            Nơi lưu giữ những khoảnh khắc trân quý bên gia đình, đồng nghiệp và những người bạn tâm giao. Mỗi ngày trôi qua là một hành trình tận hưởng niềm vui, cống hiến hết mình trong công việc và lan tỏa nguồn năng lượng bình an, tích cực đến mọi người xung quanh.
+          </p>
+
+          <!-- QUICK CONTACT CARDS -->
+          <div class="hero-contact-cards">
+            <a href="https://zalo.me/0963434868" target="_blank" class="mini-contact">
+              <div class="mini-icon phone">📞</div>
+              <div class="mini-info">
+                <small>Điện thoại / Zalo</small>
+                <strong>0963 434 868</strong>
+              </div>
+            </a>
+
+            <a href="mailto:duc.dlvp@gmail.com" class="mini-contact">
+              <div class="mini-icon email">✉️</div>
+              <div class="mini-info">
+                <small>Hộp thư Email</small>
+                <strong>duc.dlvp@gmail.com</strong>
+              </div>
+            </a>
+
+            <a href="https://web.facebook.com/buingoc.duc.9?locale=vi_VN" target="_blank" class="mini-contact">
+              <div class="mini-icon fb">🌐</div>
+              <div class="mini-info">
+                <small>Facebook cá nhân</small>
+                <strong>Bùi Ngọc Đức</strong>
+              </div>
+            </a>
+          </div>
+
+          <!-- CTA BUTTONS -->
+          <div class="hero-cta-row">
+            <a href="#gallery" class="btn btn-gold">
+              📸 Khám Phá Khoảnh Khắc Đẹp
+            </a>
+            <a href="https://zalo.me/0963434868" target="_blank" class="btn btn-outline">
+              💬 Nhắn Zalo Ngay (0963434868)
+            </a>
+            <a href="https://web.facebook.com/buingoc.duc.9?locale=vi_VN" target="_blank" class="btn btn-outline">
+              💙 Kết nối Facebook
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT PORTRAIT CARD -->
+        <div class="hero-visual">
+          <div class="portrait-card">
+            <div class="floating-badge top-left">
+              <span>⚡</span>
+              <span>Chuyên nghiệp • Tận tâm</span>
+            </div>
+
+            <div class="portrait-img-wrap" onclick="openLightbox(0)" style="cursor:pointer;">
+              <img src="images/avatar.jpg" alt="Chân dung Bùi Ngọc Đức" />
+            </div>
+
+            <div class="portrait-caption">
+              <h3>Bùi Ngọc Đức</h3>
+              <p>Ngành Điện lực Việt Nam (EVN) • Yêu đời & Sống đẹp</p>
+            </div>
+
+            <div class="floating-badge bottom-right">
+              <span>🌿</span>
+              <span>Thân Khỏe • Tâm An • Trí Sáng</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY SECTION -->
+  <section id="philosophy">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">🌿 Giá Trị Sống Cốt Lõi</div>
+        <h2 class="section-title">Ba Mảnh Ghép Của Cuộc Sống Tươi Đẹp</h2>
+        <p class="section-desc">
+          Hạnh phúc không nằm ở đích đến xa xôi, mà hiện hữu trong sự cân bằng giữa công việc đam mê, tâm hồn thanh thản và tình bằng hữu chân thành.
+        </p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🧘‍♂️</div>
+          <h3>Thân Khỏe – Tâm An – Trí Sáng</h3>
+          <p>
+            Giữ gìn sức khỏe dẻo dai, nuôi dưỡng sự bình an trong tâm hồn và luôn giữ trí tuệ minh mẫn. Khi tâm an nhiên, mọi thử thách trong cuộc sống đều trở thành cơ hội để trưởng thành và sẻ chia.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3>Tình Bằng Hữu & Đồng Nghiệp Gắn Kết</h3>
+          <p>
+            Trân trọng từng buổi hội ngộ ấm áp bên ly cà phê, bữa cơm chay thanh tịnh hay những chuyến đi cùng anh chị em bạn bè. Sự chân thành tạo nên những mối thâm giao bền chặt theo năm tháng.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">⚡</div>
+          <h3>Vững Vàng Chuyên Môn & Đổi Mới Sáng Tạo</h3>
+          <p>
+            Luôn tận tụy trong công tác ngành Điện lực, tiên phong ứng dụng công nghệ số và trí tuệ nhân tạo hiện đại vào thực tiễn công việc để mang lại giá trị thiết thực nhất.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY / MOMENTS SECTION -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">📸 Album Kỷ Niệm</div>
+        <h2 class="section-title">Những Khoảnh Khắc Sống Động & Đáng Nhớ</h2>
+        <p class="section-desc">
+          Bấm vào từng bức ảnh để xem chế độ phóng to sắc nét (Lightbox) hoặc nhấn nút <strong>▶️ Trình chiếu</strong> để thưởng thức trọn vẹn bộ sưu tập.
+        </p>
+      </div>
+
+      <div class="gallery-controls">
+        <button class="filter-btn active" onclick="filterGallery('all', this)">✨ Tất cả khoảnh khắc (5)</button>
+        <button class="filter-btn" onclick="filterGallery('heritage', this)">🏞️ Hành trình Về Nguồn</button>
+        <button class="filter-btn" onclick="filterGallery('friends', this)">☕ Hội ngộ Bạn bè & An Nhiên</button>
+        <button class="filter-btn" onclick="filterGallery('portrait', this)">👔 Chân dung & Công việc</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- FEATURED CARD 1: ĐỀN HÙNG -->
+        <article class="moment-card featured" data-category="heritage">
+          <div class="moment-img-box" onclick="openLightbox(3)">
+            <img src="images/anh3.jpg" alt="Hành trình về nguồn tại Khu Di tích Lịch sử Đền Hùng" />
+            <div class="moment-overlay">
+              <span class="zoom-pill">🔍 Bấm để phóng to toàn màn hình</span>
+            </div>
+          </div>
+          <div class="moment-body">
+            <div>
+              <span class="moment-tag">🏞️ Hành trình về nguồn • Đất Tổ Phú Thọ</span>
+              <h3>Dấu Ấn Đoàn Kết Tại Khu Di Tích Lịch Sử Đền Hùng</h3>
+              <p>
+                Dưới bóng cây cổ thụ xanh mát và cổng tam quan cổ kính <em>"Cao Sơn Cảnh Hành"</em>, cả tập thể anh chị em cùng nhau lưu lại bức hình kỷ niệm tràn đầy sức sống. Một chuyến hành hương về cội nguồn đầy ý nghĩa, tiếp thêm sinh khí và tinh thần gắn kết bền chặt.
+              </p>
+            </div>
+            <div class="moment-footer">
+              <span>📍 Khu Di tích Lịch sử Đền Hùng</span>
+              <button class="like-btn" onclick="likePhoto(this, 'denhung')">
+                ❤️ Yêu thích (<span class="like-count">128</span>)
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2: ĐẠI GIA ĐÌNH AN NHIÊN CHAY & 201 COFFEE -->
+        <article class="moment-card" data-category="friends">
+          <div class="moment-img-box" onclick="openLightbox(2)">
+            <img src="images/anh2.jpg" alt="Hội ngộ đại gia đình tại An Nhiên Chay & 201 Coffee" />
+            <div class="moment-overlay">
+              <span class="zoom-pill">🔍 Phóng to ảnh</span>
+            </div>
+          </div>
+          <div class="moment-body">
+            <div>
+              <span class="moment-tag">🌿 Thân Khỏe • Tâm An • Trí Sáng</span>
+              <h3>Hội Ngộ Rạng Rỡ Tại An Nhiên Chay & 201 Coffee</h3>
+              <p>
+                Những nụ cười tỏa nắng và cử chỉ "thả tim" đầy yêu thương của đại gia đình bạn bè, đồng nghiệp tại không gian ẩm thực chay thanh tịnh và 201 Coffee (Nguyễn Tất Thành, TP. Việt Trì).
+              </p>
+            </div>
+            <div class="moment-footer">
+              <span>📍 An Nhiên Chay & 201 Coffee</span>
+              <button class="like-btn" onclick="likePhoto(this, 'annhien_group')">
+                ❤️ Yêu thích (<span class="like-count">96</span>)
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3: TÌNH BẰNG HỮU TẠI 201 COFFEE -->
+        <article class="moment-card" data-category="friends">
+          <div class="moment-img-box" onclick="openLightbox(1)">
+            <img src="images/anh1.jpg" alt="Gặp gỡ thân tình tại 201 Coffee" />
+            <div class="moment-overlay">
+              <span class="zoom-pill">🔍 Phóng to ảnh</span>
+            </div>
+          </div>
+          <div class="moment-body">
+            <div>
+              <span class="moment-tag">☕ Góc Cà Phê & Tri Kỷ</span>
+              <h3>Khoảnh Khắc Gắn Kết Thân Tình Tại 201 Coffee</h3>
+              <p>
+                Giữa nhịp sống bận rộn, những giây phút gặp gỡ giản dị, chân thành bên những người bạn quý luôn mang lại niềm vui ấm áp và nguồn cảm hứng tươi mới.
+              </p>
+            </div>
+            <div class="moment-footer">
+              <span>📍 201 Coffee</span>
+              <button class="like-btn" onclick="likePhoto(this, 'coffee_trio')">
+                ❤️ Yêu thích (<span class="like-count">89</span>)
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4: ANH EM BẠN HỮU NĂNG LƯỢNG TÍCH CỰC -->
+        <article class="moment-card" data-category="friends">
+          <div class="moment-img-box" onclick="openLightbox(4)">
+            <img src="images/anh4.jpg" alt="Năng lượng tích cực cùng anh em tại An Nhiên Chay" />
+            <div class="moment-overlay">
+              <span class="zoom-pill">🔍 Phóng to ảnh</span>
+            </div>
+          </div>
+          <div class="moment-body">
+            <div>
+              <span class="moment-tag">👍 Năng Lượng Tích Cực</span>
+              <h3>Anh Em Hội Ngộ – Chung Niềm Vui, Vững Tinh Thần</h3>
+              <p>
+                Tinh thần lạc quan, khỏe khoắn và sự đồng điệu giữa những người anh em thân thiết dưới mái hiên An Nhiên Chay – "Thân Khỏe - Tâm An - Trí Sáng".
+              </p>
+            </div>
+            <div class="moment-footer">
+              <span>📍 TP. Việt Trì</span>
+              <button class="like-btn" onclick="likePhoto(this, 'brothers')">
+                ❤️ Yêu thích (<span class="like-count">92</span>)
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 5: CHÂN DUNG & SỰ NGHIỆP EVN -->
+        <article class="moment-card" data-category="portrait">
+          <div class="moment-img-box" onclick="openLightbox(0)">
+            <img src="images/avatar.jpg" alt="Chân dung Bùi Ngọc Đức - EVN" style="object-position: top center;" />
+            <div class="moment-overlay">
+              <span class="zoom-pill">🔍 Phóng to ảnh</span>
+            </div>
+          </div>
+          <div class="moment-body">
+            <div>
+              <span class="moment-tag">⚡ Chân Dung & Sự Nghiệp</span>
+              <h3>Tự Hào Màu Áo Ngành Điện Lực Việt Nam (EVN)</h3>
+              <p>
+                Phong thái đĩnh đạc, chuẩn mực và tinh thần trách nhiệm cao trong công việc. Luôn kết hợp hài hòa giữa kỷ luật chuyên môn kỹ thuật và tâm hồn yêu thương cuộc sống.
+              </p>
+            </div>
+            <div class="moment-footer">
+              <span>⚡ EVN • Bùi Ngọc Đức</span>
+              <button class="like-btn" onclick="likePhoto(this, 'portrait_evn')">
+                ❤️ Yêu thích (<span class="like-count">145</span>)
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT & DIGITAL BUSINESS CARD SECTION -->
+  <section id="connect">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">🤝 Kết Nối Trực Tiếp</div>
+        <h2 class="section-title">Danh Thiếp Điện Tử & Sổ Lưu Bút</h2>
+        <p class="section-desc">
+          Rất vui được kết nối, giao lưu và sẻ chia những điều tốt đẹp nhất trong công việc cũng như cuộc sống cùng quý bạn bè, đồng nghiệp!
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- DIGITAL VCARD -->
+        <div class="vcard-box">
+          <div class="vcard-header">
+            <img src="images/avatar.jpg" alt="Bùi Ngọc Đức" class="vcard-avatar" />
+            <div>
+              <h3>Bùi Ngọc Đức</h3>
+              <p>Ngọc Đức Cuộc Sống Tươi Đẹp</p>
+              <span style="font-size:12.5px; color:var(--text-muted);">🌟 Thân Khỏe • Tâm An • Trí Sáng</span>
+            </div>
+          </div>
+
+          <div class="contact-list">
+            <!-- PHONE / ZALO -->
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <div class="mini-icon phone">📞</div>
+                <div>
+                  <div style="font-size:12px; color:var(--text-muted);">Số điện thoại / Zalo</div>
+                  <strong style="font-size:16px;">0963 434 868</strong>
+                </div>
+              </div>
+              <div class="contact-item-actions">
+                <button class="btn-sm" onclick="copyText('0963434868', this)">📋 Sao chép</button>
+                <a href="tel:0963434868" class="btn-sm">📞 Gọi điện</a>
+                <a href="https://zalo.me/0963434868" target="_blank" class="btn-sm">💬 Mở Zalo</a>
+              </div>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <div class="mini-icon email">✉️</div>
+                <div>
+                  <div style="font-size:12px; color:var(--text-muted);">Địa chỉ Email</div>
+                  <strong style="font-size:15px;">duc.dlvp@gmail.com</strong>
+                </div>
+              </div>
+              <div class="contact-item-actions">
+                <button class="btn-sm" onclick="copyText('duc.dlvp@gmail.com', this)">📋 Sao chép</button>
+                <a href="mailto:duc.dlvp@gmail.com" class="btn-sm">✉️ Gửi Email</a>
+              </div>
+            </div>
+
+            <!-- FACEBOOK -->
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <div class="mini-icon fb">🌐</div>
+                <div>
+                  <div style="font-size:12px; color:var(--text-muted);">Trang Facebook chính thức</div>
+                  <strong style="font-size:14.5px;">fb.com/buingoc.duc.9</strong>
+                </div>
+              </div>
+              <div class="contact-item-actions">
+                <a href="https://web.facebook.com/buingoc.duc.9?locale=vi_VN" target="_blank" class="btn-sm">
+                  🌐 Mở Facebook
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE GUESTBOOK / WISHES -->
+        <div class="guestbook-box">
+          <h3 style="font-family:'Playfair Display',serif; font-size:22px; margin-bottom:6px;">
+            💌 Gửi Lời Chúc & Lưu Bút Kỷ Niệm
+          </h3>
+          <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:18px;">
+            Hãy để lại lời chào hoặc lời chúc tốt đẹp khi ghé thăm không gian <strong>Ngọc Đức Cuộc Sống Tươi Đẹp</strong>:
+          </p>
+
+          <form class="wish-form" onsubmit="submitWish(event)">
+            <input type="text" id="wishName" class="input-field" placeholder="Tên của bạn (Ví dụ: Anh Minh - Bạn đồng nghiệp)" required />
+            <textarea id="wishMessage" rows="3" class="input-field" placeholder="Nhập lời chúc hoặc kỷ niệm đẹp..." required></textarea>
+            <button type="submit" class="btn btn-gold" style="justify-content:center;">
+              ✨ Gửi Lời Chúc Tốt Đẹp
+            </button>
+          </form>
+
+          <div class="wishes-list" id="wishesList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p style="font-size:15px; font-weight:700; color:var(--text-primary); margin-bottom:6px;">
+        🌟 NGỌC ĐỨC CUỘC SỐNG TƯƠI ĐẸP 🌟
+      </p>
+      <p>
+        📞 Điện thoại / Zalo: <a href="tel:0963434868" style="color:var(--accent-amber); text-decoration:none; font-weight:600;">0963 434 868</a> •
+        ✉️ Email: <a href="mailto:duc.dlvp@gmail.com" style="color:var(--accent-amber); text-decoration:none; font-weight:600;">duc.dlvp@gmail.com</a> •
+        🌐 <a href="https://web.facebook.com/buingoc.duc.9?locale=vi_VN" target="_blank" style="color:var(--accent-amber); text-decoration:none; font-weight:600;">Facebook Bùi Ngọc Đức</a>
+      </p>
+      <p style="margin-top:8px; font-size:12.5px;">
+        © 2026 Bùi Ngọc Đức • Thiết kế hiện đại & Xuất bản trực tuyến trên GitHub Pages.
+      </p>
+    </div>
+  </footer>
+
+  <!-- FLOATING QUICK-CONTACT DOCK -->
+  <div class="floating-dock">
+    <a href="https://zalo.me/0963434868" target="_blank" class="dock-btn dock-zalo" title="Chat Zalo: 0963434868">
+      💬
+    </a>
+    <a href="tel:0963434868" class="dock-btn dock-phone" title="Gọi điện: 0963434868">
+      📞
+    </a>
+    <a href="https://web.facebook.com/buingoc.duc.9?locale=vi_VN" target="_blank" class="dock-btn dock-fb" title="Facebook Bùi Ngọc Đức">
+      f
+    </a>
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightboxModal" class="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      <button class="lightbox-btn prev" onclick="changeSlide(-1)">❮</button>
+      <img id="lightboxImg" src="" alt="Phóng to ảnh" />
+      <button class="lightbox-btn next" onclick="changeSlide(1)">❯</button>
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
